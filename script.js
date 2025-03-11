@@ -1,10 +1,10 @@
-document.getElementById("book-form").addEventListener("submit", function(event) {
+document.getElementById("book-form").addEventListener("submit", function (event) {
   event.preventDefault();
 
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
-  let read = document.getElementById("read").value === "true"; 
+  let read = document.getElementById("read").value === "true";
 
 
   let newBook = new Book(title, author, pages, read);
@@ -36,9 +36,9 @@ function updateTable() {
   tableBody.innerHTML = "";
 
   myLibrary.forEach((book, index) => {
-      let row = document.createElement("tr");
+    let row = document.createElement("tr");
 
-      row.innerHTML = `
+    row.innerHTML = `
           <td>${book.title}</td>
           <td>${book.author}</td>
           <td>${book.pages}</td>
@@ -48,12 +48,12 @@ function updateTable() {
           </td>
       `;
 
-      tableBody.appendChild(row);
+    tableBody.appendChild(row);
   });
 }
 
 function removeBook(index) {
-  myLibrary.splice(index, 1); 
+  myLibrary.splice(index, 1);
 
-  updateTable(); 
+  updateTable();
 }
